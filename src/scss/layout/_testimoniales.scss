@@ -1,0 +1,46 @@
+.testimoniales{
+    
+    font-size: 2.4rem;
+    padding: 2rem;
+    color: $blanco;
+
+    blockquote{
+        padding-left: 5rem;
+        position: relative;
+        margin: 5rem;
+        text-align: justify;
+        &::before{
+            position: absolute;
+            content: "";
+            background-image: url(../../../../bienesraices_inicio/build/img/comilla.svg);
+            background-repeat: no-repeat;
+            width: 6rem;
+            height: 8rem;
+            display: block;
+            left: -2rem;
+        }
+        &::after{
+            position: absolute;
+            content: "";
+            background-image: url(../../../../bienesraices_inicio/build/img/comilla.svg);
+            transform: rotate(background-image);
+            background-repeat: no-repeat;
+            width: 6rem;
+            height: 8rem;
+            display: block;
+            
+        }
+    }
+
+    .testimonial{
+        border: $grisOscuro solid 2px;
+        border-radius: 0rem 3rem;
+        background-color: $verde;
+    }
+    p{
+        font-size: 2.4rem;
+        color: white;
+        font-weight: bold;
+        margin: 0 5rem 2rem 5rem;
+    }
+}

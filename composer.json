@@ -1,0 +1,21 @@
+{
+    "name": "josea/bienesraices_inicio",
+    "description": "Bienes raices",
+    "authors": [
+        {
+            "name": "GalaxyAYL",
+            "email": "josealbertoayalazumba@gmail.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^3.4",
+        "intervention/image-laravel": "^1.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Model\\":"./models",
+            "MVC\\":"./",
+            "Controllers\\":"./controllers"
+        }
+    }
+}
