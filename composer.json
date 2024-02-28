@@ -1,6 +1,7 @@
 {
     "name": "josea/bienesraices_inicio",
     "description": "Bienes raices",
+    "type": "project",
     "authors": [
         {
             "name": "GalaxyAYL",

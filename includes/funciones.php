@@ -2,7 +2,7 @@
 
 define('TEMPLATES_URL', __DIR__ . '/templates');
 define('FUNCTIONES_URL', __DIR__ . '/funciones.php');
-define('CARPETA_IMAGENES', __DIR__ . '/../imagenes/');
+define('CARPETA_IMAGENES', $_SERVER['DOCUMENT_ROOT'].'/imagenes/');
 
 
 
@@ -78,9 +78,21 @@ function muestraMensaje($codigo){
         case 7:
             $mensaje='Actualizado vendedor fallo';
             break;
+        case 8:
+            $mensaje='Actualizado vendedor fallo';
+            break;
         default:
             $mensaje='';
             break;
     }
     return $mensaje;
+}
+
+function validarORedireccionar(string $url){
+    $id = $_GET['id'];
+      $id = filter_var($id, FILTER_VALIDATE_INT);
+      if(!$id){
+        header("Location: $url");
+      }
+      return $id;
 }
