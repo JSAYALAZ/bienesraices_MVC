@@ -4,7 +4,6 @@ if (!isset($_SESSION)) {
 }
 
 $auth = $_SESSION['login'] ?? null;
-
 if (!isset($inicio)) {
   $inicio = false;
 }
@@ -18,7 +17,7 @@ if (!isset($inicio)) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Bienes raices</title>
-  <link rel="stylesheet" href="../build/css/app.css" />
+  <link rel="stylesheet" href="/build/css/app.css" />
 </head>
 
 <body>
@@ -27,25 +26,25 @@ if (!isset($inicio)) {
     <div class="contenedor contenido-header">
 
       <div class="barra">
-        <a href="../../layout.php">
-          <img src="../build/img/logo.svg" alt="Logo" />
+        <a href="/">
+          <img src="/build/img/logo.svg" alt="Logo" />
         </a>
 
         <div class="mobile-menu">
-          <img src="../build/img/barras.svg" alt="ico" />
+          <img src="/build/img/barras.svg" alt="ico" />
         </div>
 
         <div class="derecha">
-          <img src="../build/img/dark-mode.svg" alt="darkmode" class="darkmode" />
+          <img src="/build/img/dark-mode.svg" alt="darkmode" class="darkmode" />
           <nav class="navegacion">
-            <a href="../nosotros.php">Nosotros</a>
-            <a href="../anuncio.php">Anuncios</a>
-            <a href="../blog.php">Blog</a>
-            <a href="../contacto.php">Contacto</a>
+            <a href="/nosotros">Nosotros</a>
+            <a href="/anuncio">Anuncios</a>
+            <a href="/blog">Blog</a>
+            <a href="/contacto">Contacto</a>
             <?php if ($auth): ?>
-              <a href="../cerrar-sesion.php">Cerrar Sesion</a>
+              <a href="/logout">Cerrar Sesion</a>
             <?php else: ?>
-              <a href="../login.php">Iniciar sesion</a>
+              <a href="/login">Iniciar sesion</a>
             <?php endif ?>
           </nav>
         </div>
@@ -66,17 +65,17 @@ if (!isset($inicio)) {
   <footer class="footer seccion">
     <div class="contenedor-footer">
       <nav class="navegacion">
-        <a href="nosotros.html">Nosotros</a>
-        <a href="anuncio.html">Anuncios</a>
-        <a href="blog.html">Blog</a>
-        <a href="contacto.html">Contacto</a>
+        <a href="nosotros">Nosotros</a>
+        <a href="anuncio">Anuncios</a>
+        <a href="blog">Blog</a>
+        <a href="contacto">Contacto</a>
       </nav>
     </div>
 
     <p class="copyright">Todos los derechos Reservador 2024 &copy;</p>
   </footer>
 
-  <script src="../build/js/bundle.min.js"></script>
-</body>
+  <script src="build/js/bundle.min.js"></script>
+</body>s
 
 </html>

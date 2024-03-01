@@ -14,6 +14,7 @@ return array(
     'Psr\\SimpleCache\\' => array($vendorDir . '/psr/simple-cache/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Psr\\Clock\\' => array($vendorDir . '/psr/clock/src'),
+    'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
     'Model\\' => array($baseDir . '/models'),
     'MVC\\' => array($baseDir . '/'),
     'Intervention\\Image\\Laravel\\' => array($vendorDir . '/intervention/image-laravel/src'),

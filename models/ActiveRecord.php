@@ -70,12 +70,12 @@ class ActiveRecord
     public function setImagen($imagen) {
         // Elimina la imagen previa
         if($imagen) {
-           
+            if(!is_null($this->getAll('id'))){
+                $this->borrarImagen();
+            }
             $this->setAll('imagen',$imagen);
         }
-        if(!is_null($this->getAll('id'))){
-            $this->borrarImagen();
-        }
+        
         
     }
     

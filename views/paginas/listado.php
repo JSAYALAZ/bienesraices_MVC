@@ -1,12 +1,8 @@
-<?php
-use App\Propiedad;
-$propiedad = Propiedad::all($limite);
-$carpetaImagenes = '../../../bienesraices_inicio/imagenes/';
-?>
+
 <div class="contenedor-anuncio">
     <?php foreach ($propiedad as $anuncio) : ?>
         <div class="anuncio">
-            <img src=<?php echo $carpetaImagenes. $anuncio->getAll('imagen') ?> alt="img" loading="lazy" />
+            <img src='imagenes/<?php echo $anuncio->getImagen() ?>' alt="img" loading="lazy" />
             <div class="contenido-anuncio">
                 <h3><?php echo $anuncio->getTitulo()?></h3>
                 <p><?php echo $anuncio->getDescripcion()?></p>
@@ -28,7 +24,7 @@ $carpetaImagenes = '../../../bienesraices_inicio/imagenes/';
                     </li>
                 </ul>
 
-                <a href="../../../bienesraices_inicio/anuncio_individual.php?id=<?php echo $anuncio->getId()?>" class="boton boton-amarillo">Ver propiedad</a>
+                <a href="propiedad_ind?id=<?php echo $anuncio->getId()?>" class="boton boton-amarillo">Ver propiedad</a>
             </div>
         </div>
     <?php endforeach ?>

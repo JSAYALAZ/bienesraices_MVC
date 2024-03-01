@@ -5,13 +5,10 @@ namespace Controllers;
 use MVC\Router;
 use Model\Vendedor;
 
-//variables globales
 
-class VendedorController
-{
+class VendedorController{
   //CREA NUEVAS PROPIEDADES
-  public static function crear(Router $router)
-  {
+  public static function crear(Router $router){
     $vendedor = new Vendedor;
     $errores = Vendedor::getErrores();
 
@@ -37,7 +34,6 @@ class VendedorController
       'errores' => $errores
     ]);
   }
-
 
   //ACTUALIZA LAS PROPIEDADES
   public static function actualizar(Router $router){

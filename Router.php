@@ -21,12 +21,22 @@ class Router
 
 
     //ES COMO UN CALLBACK QUE CUANDO SE CAMBIA LA RUTA/ SE ACTIVA LA FUNCION
-    public function comprobarRutas()
-    {
+    public function comprobarRutas(){
+        session_start();
+        $auth = $_SESSION['login']??null;
+        $rutas_protegidas = [
+            '/admin', 
+            'propiedades/crear',
+            'propiedades/actualizar',
+            'propiedades/eliminar',
+            'vendedores/crear',
+            'vendedores/actualizar',
+            'vendedores/eliminar'
+        ];
+
         $urlActual = $_SERVER['PATH_INFO'] ?? '/';
         $metodo = $_SERVER['REQUEST_METHOD'];
 
-        //COMPARA SI LA RUTA ENVIA A TRAVES DE GET O POST
         if ($metodo === 'GET') {
             $fn = $this->getRoutes[$urlActual] ?? null;
         }
@@ -35,8 +45,14 @@ class Router
             $fn = $this->postRoutes[$urlActual] ?? null;
         }
 
+        if(in_array($urlActual, $rutas_protegidas)&& !$auth ){
+            if($auth){
+                header('Location: /');
+            }else{
 
-        //MANDA A LLAMAR AL METODO Y EL LUGAR DONDE SE EJECUTA
+            }
+        }
+
         if ($fn) {
             call_user_func($fn, $this);
         } else {
@@ -52,8 +68,7 @@ class Router
         ob_start();
         include_once __DIR__ . "/views/$view.php";
         $contenido = ob_get_clean();
-        
-
+    
         include_once __DIR__ . "/views/layout.php";
     }
 }

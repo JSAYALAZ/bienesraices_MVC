@@ -8,8 +8,7 @@ use Model\Vendedor;
 
 //variables globales
 
-class PropiedadController
-{
+class PropiedadController{
 
   //MUESTRA PAGINA PRINCIPAL
   public static function index(Router $router){
